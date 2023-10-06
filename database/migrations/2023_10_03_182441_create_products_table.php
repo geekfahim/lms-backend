@@ -20,7 +20,7 @@ return new class extends Migration {
             $table->foreignIdFor(Category::class);
             $table->foreignIdFor(SubCategory::class)->nullable();
             $table->foreignIdFor(Brand::class)->nullable();
-            $table->foreignIdFor('unit_id')->nullable();
+            $table->foreignIdFor(\App\Models\Unit::class)->nullable();
             $table->bigInteger('vat_rate')->nullable();
             $table->string('vat_type')->default(VatType::Exclusive);
             $table->string('name');

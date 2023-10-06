@@ -3,7 +3,14 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Brand;
+use App\Models\Category;
+use App\Models\Product;
+use App\Models\SubCategory;
+use App\Models\Unit;
+use App\Models\User;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -12,11 +19,19 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
+          User::factory(10)->create();
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+          Brand::factory(20)->create();
+          Category::factory(30)->create();
+          Unit::factory(30)->create();
+          SubCategory::factory(100)->create();
+          Product::factory(100)->create();
+
+           User::factory()->create([
+            'name' => 'Test User',
+            'email' => 'test@example.com',
+            'phone'=>'01797371947',
+            'password' => Hash::make('password'),
+        ]);
     }
 }
